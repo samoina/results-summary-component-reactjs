@@ -1,7 +1,37 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
+.main__result {
+	background-color: var(--light-royal-blue);
+	color: var(--light-lavender);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	border-bottom-left-radius: 1.5em;
+	border-bottom-right-radius: 1.5em;
+	padding: 1.2em 0;
+	/* display: none; */
+}
+
+.main__result--circle {
+	/* background-color: var(--violet-blue); */
+	background: linear-gradient(var(--violet-blue), var(--light-royal-blue));
+	height: 6.2em;
+	width: 6.2em;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.main__result--largetext {
+	font-size: 2.5em;
+	color: var(--white);
+}
+
+.main__para--smalltext {
+	font-size: 0.8em;
+}
+
 

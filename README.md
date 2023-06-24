@@ -40,13 +40,19 @@ Took a mobile-first approach for this challenge. I first created the static file
 
 ### What I learned
 
+#### Difference between index.css and App.css
+
 This is my first ReactJS project and I was wondering where to add my CSS styles (especially since I scaffolded my project using Vite)- what is the difference between index.css and App.css?
 
-Found this explanation: In ReactJS, the App is the topmost component from where we get all the children components. By default, vite sets up the index.css file which is linked to the index.html file. It is this file that determines global styles - ie styles for the entire application.
+Found this explanation: In ReactJS, the App is the topmost component from where we get all the children components. By default, Vite sets up the index.css file which is linked to the index.html file. It is this file that determines global styles - ie styles for the entire application.
 
 App.css on the other hand, is typically associated with App.jsx which is the entry point for the React App. For this reason, this file contains styling that is specific to the component hierarchy.
 
-With this explanation, I figured that it would be best to have my reset styles and utiliy classes (if any) in the index.css file. For styles that are specific to App.js and its children components, these would go to App.css. I also noted that one can create additional css files for a more modular approach in styling (haven't done this before)
+With this explanation, I figured that it would be best to have my reset styles and utility classes (if any) in the index.css file. For styles that are specific to App.js and its children components, these would go to App.css. I also noted that one can create additional css files for a more modular approach in styling (haven't done this before)
+
+#### Where to put the className
+
+After figuring out to put component styles in App.css, I was at crossroads at where to put the className attribute : in the parent component and then pass it to the relevant child component as a prop or otherwise?
 
 ## Author
 
