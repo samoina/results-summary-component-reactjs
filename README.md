@@ -10,11 +10,9 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 ## Overview
-
 
 ### The challenge
 
@@ -25,14 +23,12 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github]()
-- Live Site URL: [Netlify](https://samoina-results-summary-component.netlify.app/)
+- Solution URL: [Github](https://github.com/samoina/results-summary-component-reactjs)
+- Live Site URL: [Netlify](/)
 
 ## My process
 
-Took a mobile-first approach for this challenge. I first created the static files and then added the dynamism with the figures from the JSON file included in the starter package.
-
-EDITED: I decided to hide the results section so that when a user clicks the button, it fetches the scores from the JSON file, and shows them on the summary section as well as displays the results section.
+Took a mobile-first approach for this challenge. I first created the static files and then added the dynamism with the figures from the JSON file included in the starter package. I decided to hide the results section so that when a user clicks the button, it fetches the scores from the JSON file, and shows them on the summary section as well as displays the results section.
 
 ### Built with
 
@@ -40,79 +36,17 @@ EDITED: I decided to hide the results section so that when a user clicks the but
 - BEM naming convention
 - Flexbox
 - Mobile-first workflow
-- Vanilla Javascript
+- ReactJS
 
 ### What I learned
 
-1. With this project, I took some time to check out the difference between the _ and body selectors when doing the CSS reset. I had been brushing over this aspect but finally understood that the _ selector is known as the universal selector. It represents ALL elements in the document and therefore styles under it will apply to each and every element.
+This is my first ReactJS project and I was wondering where to add my CSS styles (especially since I scaffolded my project using Vite)- what is the difference between index.css and App.css?
 
-the 'body' selector on the other hand specifically targets the <body> element and the elements within it.
+Found this explanation: In ReactJS, the App is the topmost component from where we get all the children components. By default, vite sets up the index.css file which is linked to the index.html file. It is this file that determines global styles - ie styles for the entire application.
 
-```css
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	margin: 0;
-}
+App.css on the other hand, is typically associated with App.jsx which is the entry point for the React App. For this reason, this file contains styling that is specific to the component hierarchy.
 
-body {
-	line-height: 1.5;
-	font-size: 18px;
-}
-```
-
-2. In the past four projects I have done on Front-end Mentor, the feedback from the accessibility report always puzzled me - that the 'Page should contain a level-one heading'. Helpful feedback from one [@Abdul Khalid](https://www.frontendmentor.io/profile/0xAbdulKhalid) showed me how to go about it.
-   _The need to add a level-one heading to improve accessibility by reading aloud the heading by screen readers, you can achieve this by adding a sr-only class to hide it from visual users (it will be useful for visually impaired users)_
-
-Thus, I added this to this challenge as below, where sr- is for screen reader. Code Snippet from [@CSS Tricks](https://css-tricks.com/inclusively-hidden/)
-PS:I am not sure if this is the correct way to write it with BEM naming convention:
-
-```html
-<h1 class="main__heading--sr">Results Summary</h1>
-```
-
-```css
-.main__heading--sr {
-	/* clips elemet to a rectangle coordinates set to 0, hides it */
-	clip: rect(0 0 0 0);
-	/* create a rectangular shape inset 50% from all sides */
-	clip-path: inset(50%);
-	/* set height to 1px, extremely thin, almost invisible */
-	height: 1px;
-	/* hide content that spills over from the 1px height */
-	overflow: hidden;
-	/* position element absolutely in body */
-	position: absolute;
-	/* prevent line breaks */
-	white-space: nowrap;
-	/* similar to height, narrow it horizontally */
-	width: 1px;
-}
-```
-
-2. I found myself needing the reminder on how to loop through BOTH the span elements with the same classname, and looping through the objects from the JSON file so that each iteration places the correct score in the correct div. I used the forEach() method as it provides an index parameter which i can then use to access the specific score for the span in that iteration
-
-```javascript
-//use the forEach loop to iterate over each element. this way we make use of the index parameter then use the same index for the score array
-
-const scoreSpan = document.querySelectorAll('.summary__score--percent');
-
-scoreSpan.forEach((span, index) => {
-	if (index < data.length) {
-		scoreSpan.forEach((span, index) => {
-			let currentScore = data[index].score;
-			span.textContent = currentScore;
-		});
-	}
-});
-```
-
-### Continued development
-
-Fetch the scoring from the JSON file to display the scores dynamically and then show the result
-
-EDITED: this is done
+With this explanation, I figured that it would be best to have my reset styles and utiliy classes (if any) in the index.css file. For styles that are specific to App.js and its children components, these would go to App.css. I also noted that one can create additional css files for a more modular approach in styling (haven't done this before)
 
 ## Author
 
