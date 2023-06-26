@@ -3,6 +3,7 @@ import icon1 from './assets/images/icon-reaction.svg';
 import icon2 from './assets/images/icon-memory.svg';
 import icon3 from './assets/images/icon-verbal.svg';
 import icon4 from './assets/images/icon-visual.svg';
+import ScoreSummary from './ScoreSummary';
 
 const Summary = () => {
 	const [data, setData] = useState([]);
@@ -34,13 +35,13 @@ const Summary = () => {
 		<div>
 			<h2>Summary</h2>
 
-			<ul>
-				{data.map((object, index) => (
-					<li key={index}>
-						<img src={icons[index]} /> {object.category} {object.score}
-					</li>
-				))}
-			</ul>
+			{data.map((object, index) => (
+				<ScoreSummary
+					imgSrc={icons[index]}
+					category={object.category}
+					score={object.score}
+				/>
+			))}
 		</div>
 	);
 };

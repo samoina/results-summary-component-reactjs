@@ -6,7 +6,7 @@ function App() {
 	return (
 		<main>
 			<Result className="main__result" />
-			<Summary />
+			<Summary className="main__summary" />
 		</main>
 	);
 }

@@ -93,7 +93,7 @@ return (
 )>
 ```
 
-I made several attempts at this piece of code, and after w hile realized that I was looping through an array of objects, and what I needed to do was use dot notation to access the specific thing category or icon. But then again, the icons would not render, even though the category and the score did. 
+I made several attempts at this piece of code, and after while realized that I was looping through an array of objects, and what I needed to do was use dot notation to access the specific thing category or icon. But then again, the icons would not render, even though the category and the score did.
 
 #### How do I access the images located in the assets folder after looping through the array?
 
@@ -117,7 +117,6 @@ const icons = [icon1, icon2, icon3, icon4];
 			</ul>
 ...
 ```
-
 
 ## Author
 
