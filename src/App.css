@@ -34,4 +34,65 @@
 	font-size: 0.8em;
 }
 
+/* summary */
+.main__summary {
+	padding: 1.2em;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
 
+.main__summary--div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.9em;
+	border-radius: 0.5em;
+}
+
+.main__summary--reaction {
+	color: var(--light-red);
+	background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.main__summary--memory {
+	color: var(--orangey-yellow);
+	background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.main__summary--verbal {
+	color: var(--green-teal);
+	background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.main__summary--visual {
+	color: var(--cobalt-blue);
+	background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.summary__score {
+	color: var(--dark-gray-blue);
+}
+
+.main__button {
+	background-color: var(--dark-gray-blue);
+	width: 100%;
+	border: none;
+	color: var(--white);
+	padding: 1em;
+	border-radius: 2em;
+}
+
+.main__button:hover {
+	background-color: var(--violet-blue);
+	cursor: pointer;
+}
+
+/* Attribution */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
