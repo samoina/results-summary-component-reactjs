@@ -54,6 +54,71 @@ With this explanation, I figured that it would be best to have my reset styles a
 
 After figuring out to put component styles in App.css, I was at crossroads at where to put the className attribute : in the parent component and then pass it to the relevant child component as a prop or otherwise?
 
+#### Creating a child component for each of the sections with the icons
+
+I had some trouble looping through the icons and using useEffect hook so that the first time the page renders, it shows the icons. Then, using the setter function from the useState hook to change the icons. I would then loop through the array and set each icon to the Child component as a prop. For some reason it does not work and I am not sure why: This was my intial approach :
+
+```jsx
+const [icons, setIcons] = useState([]);
+
+useEffect(() => {
+	fetchIcons()
+		.then((data) => setIcons(data))
+		.catch((err) => console.error(err));
+}, []);
+
+async function fetchIcons() {
+	try {
+		const response = await fetch('data.json');
+
+		const data = await response.json();
+
+		return iconsData;
+	} catch (error) {
+		throw new Error(`oops! error! ${error.message}`);
+	}
+}
+
+return (
+		<div>
+			<h2>Summary</h2>
+
+			{icons.map((icon) => (
+				<ScoreSummary
+					className="main__summary--div main__summary--reaction"
+					icon={icon}
+				/>
+			))}
+    </div
+)>
+```
+
+I made several attempts at this piece of code, and after w hile realized that I was looping through an array of objects, and what I needed to do was use dot notation to access the specific thing category or icon. But then again, the icons would not render, even though the category and the score did. 
+
+#### How do I access the images located in the assets folder after looping through the array?
+
+I thought that it was possible to import folders (such as the asset one- again another gap I am noticing in my self-taught journey on Javascript modules). So what worked was to import each of the images, create an array and then use the index in the map method to set each icon in its rightful category. This is what it looked like:
+
+```jsx
+import icon1 from './assets/images/icon-reaction.svg';
+import icon2 from './assets/images/icon-memory.svg';
+import icon3 from './assets/images/icon-verbal.svg';
+import icon4 from './assets/images/icon-visual.svg';
+
+const icons = [icon1, icon2, icon3, icon4];
+
+...
+	<ul>
+				{data.map((object, index) => (
+					<li key={index}>
+						<img src={icons[index]} /> {object.category} {object.score}
+					</li>
+				))}
+			</ul>
+...
+```
+
+
 ## Author
 
 - Website - [Samoina Lives](https://samoinalives.wordpress.com/)
