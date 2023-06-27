@@ -4,6 +4,7 @@ import icon2 from './assets/images/icon-memory.svg';
 import icon3 from './assets/images/icon-verbal.svg';
 import icon4 from './assets/images/icon-visual.svg';
 import ScoreSummary from './ScoreSummary';
+import Button from './Button';
 
 const Summary = () => {
 	const [data, setData] = useState([]);
@@ -31,8 +32,12 @@ const Summary = () => {
 		}
 	};
 
+	const handleClick = () => {
+		console.log('Clicked');
+	};
+
 	return (
-		<div>
+		<div className="main__summary">
 			<h2>Summary</h2>
 
 			{data.map((object, index) => (
@@ -42,6 +47,7 @@ const Summary = () => {
 					score={object.score}
 				/>
 			))}
+			<Button onClick={handleClick} />
 		</div>
 	);
 };

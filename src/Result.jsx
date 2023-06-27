@@ -1,7 +1,8 @@
 const Result = ({ className }) => {
 	return (
-		<div className={className}>
+		<div className="main__result">
 			<h1 className="main__heading--sr">Results Summary</h1>
+			<p>Your Result</p>
 
 			<p className="main__result--circle main__para--smalltext">
 				<span className="extra-bold main__result--largetext">76 </span>

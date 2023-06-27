@@ -1,16 +1,17 @@
 import './App.css';
 import Result from './Result';
 import Summary from './Summary';
-import Button from './Button';
+import Attribution from './Attribution';
 
 function App() {
 	return (
-		<main>
-			<Result className="main__result" />
-			<Summary className="main__summary" />
-			<Button />
-			<Atrribution className="attribution" />
-		</main>
+		<div>
+			<main className="main">
+				<Result />
+				<Summary />
+			</main>
+			<Attribution />
+		</div>
 	);
 }
 

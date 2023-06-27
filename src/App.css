@@ -1,3 +1,21 @@
+/* MAIN */
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Screen Reader heading */
+.main__heading--sr {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
 .main__result {
 	background-color: var(--light-royal-blue);
 	color: var(--light-lavender);
@@ -95,4 +113,36 @@
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 990px) {
+	.main {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 50%;
+		margin: 0 auto;
+		margin-top: 100em;
+	}
+
+	.main__result,
+	.main__summary {
+		flex: 1 0 50%;
+	}
+
+	.main__result {
+		border-radius: 1.5em;
+		padding: 4.2em;
+		gap: 1.2em;
+	}
+
+	.main__summary {
+		padding-left: 2em;
+	}
+
+	.main__result--circle {
+		height: 10em;
+		width: 10em;
+	}
 }

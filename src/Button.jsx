@@ -1,7 +1,8 @@
-const Button = () => {
-  return (
-   <button className="main__button"
-   type="submit">Continue</button>
-  )
-}
-export default Button
+const Button = ({ onClick }) => {
+	return (
+		<button onClick={onClick} className="main__button" type="submit">
+			Continue
+		</button>
+	);
+};
+export default Button;
