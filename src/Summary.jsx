@@ -20,6 +20,7 @@ const Summary = () => {
 		getObj();
 	}, []);
 
+	//Fetch objects asynchronously
 	const fetchObjects = async () => {
 		try {
 			const response = await fetch('./data.json');
@@ -32,22 +33,19 @@ const Summary = () => {
 		}
 	};
 
-	const handleClick = () => {
-		console.log('Clicked');
-	};
-
 	return (
 		<div className="main__summary">
 			<h2>Summary</h2>
 
 			{data.map((object, index) => (
 				<ScoreSummary
+					key={index}
 					imgSrc={icons[index]}
 					category={object.category}
 					score={object.score}
 				/>
 			))}
-			<Button onClick={handleClick} />
+			<Button />
 		</div>
 	);
 };

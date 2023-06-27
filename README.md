@@ -52,7 +52,7 @@ With this explanation, I figured that it would be best to have my reset styles a
 
 #### Where to put the className
 
-After figuring out to put component styles in App.css, I was at crossroads at where to put the className attribute : in the parent component and then pass it to the relevant child component as a prop or otherwise?
+After figuring out to put component styles in App.css, I was at crossroads at where to put the className attribute : in the parent component and then pass it to the relevant child component as a prop or otherwise? It definitely makes sense to place the className in the child component.
 
 #### Creating a child component for each of the sections with the icons
 
@@ -117,6 +117,12 @@ const icons = [icon1, icon2, icon3, icon4];
 			</ul>
 ...
 ```
+
+#### How do I render the page with everything else from the JSON file, except the score, and only update the score when the button is clicked?
+
+This was a bit confusing for me because I knew to place the useEffect hook so that on initial render, it displays everything except the scores. but was wondering how to change the scores dynamically only when the button is clicked.
+
+I have yet to figure this out. - how do I fetch the 'Reaction' category and 'Icons' only on the first render, and then when the Button is clicked, change the scores from 0 to those fetched from the JSON file
 
 ## Author
 
