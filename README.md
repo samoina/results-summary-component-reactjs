@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/samoina/results-summary-component-reactjs)
-- Live Site URL: [Netlify](/)
+- Live Site URL: [Netlify](https://results-summary-component-reactjs.netlify.app/)
 
 ## My process
 
