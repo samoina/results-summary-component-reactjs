@@ -124,6 +124,12 @@ This was a bit confusing for me because I knew to place the useEffect hook so th
 
 I have yet to figure this out. - how do I fetch the 'Reaction' category and 'Icons' only on the first render, and then when the Button is clicked, change the scores from 0 to those fetched from the JSON file
 
+#### Deployment
+
+I did deploy the source code directly and realized it didn't work because I had obviously skipped the step where I need to build the production bundle before deployment for optimization .
+
+Even after i did build the production bundle, I still could not get the Netlify link to work and I am wondering what step I am missing.
+
 ## Author
 
 - Website - [Samoina Lives](https://samoinalives.wordpress.com/)
