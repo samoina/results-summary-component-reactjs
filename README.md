@@ -130,6 +130,8 @@ I did deploy the source code directly and realized it didn't work because I had 
 
 Even after i did build the production bundle, I still could not get the Netlify link to work and I am wondering what step I am missing.
 
+UPDATE: so I figured out why it wasn't working. the 'data.json' file that I had included the link in my component, was not in the public folder, and was therefore not included during npm run build. So i moved it to the public folder, re-did npm run build once more and re-deployed and got it to work (2 hours later, whew)
+
 ## Author
 
 - Website - [Samoina Lives](https://samoinalives.wordpress.com/)
