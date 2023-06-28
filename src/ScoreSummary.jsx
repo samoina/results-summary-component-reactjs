@@ -12,11 +12,11 @@ const ScoreSummary = ({ imgSrc, category, score }) => {
 			}`}
 		>
 			<p>
-				<img src={imgSrc} />
+				<img src={imgSrc} alt="icon showing category" />
 				{category}
 			</p>
 			<span className="summary__score">
-				<b className="extra-bold summary__score--percent">{score}</b> /100
+				<b className="extra-bold summary__score--percent"> {score}</b> /100
 			</span>
 		</div>
 	);
