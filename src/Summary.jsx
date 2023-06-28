@@ -23,7 +23,7 @@ const Summary = () => {
 	//Fetch objects asynchronously
 	const fetchObjects = async () => {
 		try {
-			const response = await fetch('./data.json');
+			const response = await fetch('./public/data.json');
 
 			const data = await response.json();
 
