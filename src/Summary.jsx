@@ -29,7 +29,7 @@ const Summary = () => {
 
 			return data;
 		} catch (err) {
-			console.error('There was an error');
+			console.error(`${err}: There was an error`);
 		}
 	};
 
